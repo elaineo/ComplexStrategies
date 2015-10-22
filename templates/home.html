@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Trading Strategy Generator{% endblock %}
+{% block content %}
+
+<div class="row-fluid">
+  <div class="span12">
+    <img src="/static/img/stratback.png" border=0><br>
+    <div class="dkblue">
+    <div class="row dkblue">
+
+      <div class="span10 offset1 content" id='update'>
+      <div class="row">
+      <div class="span12">
+        <h2>What's my trading strategy?</h2>
+        <div id="dumpstrat"></div>
+      </div></div>
+      <div class="row">
+        <div class="span2 offset10">
+        <br>
+        <button class='btn btn-mini'>Another one</button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <hr class="bottom">
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    update_strategy();
+    $('#update').click(function() {
+        update_strategy();
+    });
+})
+function update_strategy(){
+    $.ajax({
+        type: "GET",
+        url: "/generate",
+        success: function(strat) {
+            console.log(strat);
+            $('#dumpstrat').html(strat);
+        }
+    });
+}
+</script>
+
+{% endblock %}
+
+

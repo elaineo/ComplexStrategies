@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Investor Relations{% endblock %}
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+<a href="/"><img src="/static/img/stratback.png" border=0></a><br>
+    <div class="dkblue">
+    <div class="row dkblue">
+
+      <div class="span10 offset1 content" id='update'>
+        <h2>Investor Relations</h2>
+        
+
+<form enctype="multipart/form-data" method="post" class="form-horizontal">
+
+   <div class="control-group">
+        <label class="control-label" for="name">Name</label>
+        <div class="controls">
+          <input type="text" name="name" value="{{name}}">
+        </div>
+    </div>
+   <div class="control-group">
+        <label class="control-label" for="email">Email Address</label>
+        <div class="controls">
+          <input type="text" name="email" value="{{email}}">
+        </div>
+    </div>    
+   <div class="control-group">
+        <label class="control-label" for="subject">Subject</label>
+        <div class="controls">
+          <input type="text" name="subject" value="{{subject}}">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="message">Message</label>
+        <div class="controls">
+            <textarea rows=4 name="message">{{message}}</textarea>
+        </div>
+    </div>
+
+    <p align="center">		
+    <button type="submit" class="btn">Submit</button>
+    </p>
+  </form>        
+        
+        
+      </div>
+    </div>
+    <hr class="bottom">
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+  
